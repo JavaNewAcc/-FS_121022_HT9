@@ -8,6 +8,7 @@ $color_white_green: #F6FDEE;
 $color_black_60pct: rgba(0, 0, 0, 0.6);
 $color_black_20pct: rgba(0, 0, 0, 0.2);
 $color_white_red: #D9D9D9;
+$color_white_pink: #E5E5E5;
 
 @keyframes fadeIn {
     0% {
@@ -16,6 +17,20 @@ $color_white_red: #D9D9D9;
 
     100% {
         opacity: 1;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translatey(0px);
+    }
+
+    50% {
+        transform: translatey(-45px);
+    }
+
+    100% {
+        transform: translatey(0px);
     }
 }
 
@@ -43,6 +58,22 @@ html {
     :hover {
         --_d: 100%;
         color: black;
+    }
+}
+
+.img_zoomIn {
+    transition: transform 0.5s;
+
+    :hover {
+        transform: scale(1.1);
+    }
+}
+
+.derigable_float {
+    transition: transform 2s;
+
+    :hover {
+        transform: translateX(-1.5);
     }
 }
 
@@ -166,12 +197,13 @@ nav {
 }
 
 .our_story_page {
+    background-color: $color_white_pink;
     padding-top: 11.11vh;
     padding-bottom: 11.11vh;
 
     h3 {
         font-size: 4rem;
-        padding-bottom: 6.48vh;
+        padding-bottom: 2.6vw;
     }
 
     .grid_container {
@@ -184,6 +216,9 @@ nav {
 
     img {
         max-width: 100%;
+        align-self: center;
+        min-height: 100%;
+        transition: transform 0.5s;
     }
 
     .img_col_1_1 {
@@ -191,6 +226,7 @@ nav {
         grid-row-end: 4;
         grid-column-start: 1;
         grid-column-end: 2;
+        text-align: center;
     }
 
     .text_2_1 {
@@ -216,6 +252,7 @@ nav {
         grid-row-end: 3;
         grid-column-start: 3;
         grid-column-end: 4;
+        text-align: center;
     }
 
     .text_col_1_2 {
@@ -230,6 +267,14 @@ nav {
             font-size: 1.8rem;
             font-weight: 400;
         }
+    }
+
+    .img_col_2_2 {
+        grid-row-start: 2;
+        grid-row-end: 6;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        text-align: center;
     }
 
     .text_col_3_2 {
@@ -251,6 +296,7 @@ nav {
         grid-row-end: 6;
         grid-column-start: 1;
         grid-column-end: 2;
+        text-align: center;
     }
 
     .img_col_3_3 {
@@ -258,6 +304,7 @@ nav {
         grid-row-end: 6;
         grid-column-start: 3;
         grid-column-end: 4;
+        text-align: center;
     }
 
     .read_more {
@@ -278,15 +325,8 @@ nav {
                     linear-gradient($color_yellow 0 0) bottom/100% var(--_d, 0) no-repeat;
                 overflow: hidden;
                 transition: 0.3s;
-                border-radius: 5px;
-            }
-
-            ::after {
-                content: "";
-                display: block;
-                width: 100%;
-                height: 5px;
-                background-color: $color_yellow;
+                border-radius: 2px;
+                border-bottom: 5px solid $color_yellow;
             }
         }
     }
@@ -295,7 +335,7 @@ nav {
 .our_collection {
     padding-top: 6.25vw;
     padding-bottom: 6.25vw;
-    position:relative;
+    position: relative;
 
     h3 {
         font-size: 4rem;
@@ -304,22 +344,22 @@ nav {
     }
 }
 
-.our_collection::before{
-    content:"";
+.our_collection::before {
+    content: "";
     width: 100%;
     height: 0px;
-    border:5px solid $color_orange;
-    position:absolute;
+    border-bottom: 5px solid $color_orange;
+    position: absolute;
     top: 13.84vw;
     z-index: -1;
 }
 
-.our_collection::after{
-    content:"";
+.our_collection::after {
+    content: "";
     width: 100%;
     height: 0px;
-    border:5px solid $color_orange;
-    position:absolute;
+    border-bottom: 5px solid $color_orange;
+    position: absolute;
     bottom: 11.93vw;
     z-index: -1;
 }
@@ -334,28 +374,6 @@ nav {
         background-size: cover;
         background-position: center;
         padding: 15.47vw 1.86vw 3.65vw 1.04vw;
-
-        div {
-            display: flex;
-
-            h4 {
-                color: $color_white;
-                padding-bottom: 1.04vw;
-            }
-
-            ::after {
-                content: "";
-                display: block;
-                width: 100%;
-                height: 5px;
-                background-color: $color_yellow;
-            }
-        }
-
-        p {
-            font-size: 1.8rem;
-            color: $color_white;
-        }
     }
 
     .Dubai {
@@ -364,28 +382,6 @@ nav {
         background-size: cover;
         background-position: center;
         padding: 15.47vw 1.86vw 3.65vw 1.04vw;
-
-        div {
-            display: flex;
-
-            h4 {
-                color: $color_white;
-                padding-bottom: 1.04vw;
-            }
-
-            ::after {
-                content: "";
-                display: block;
-                width: 100%;
-                height: 5px;
-                background-color: $color_yellow;
-            }
-        }
-
-        p {
-            font-size: 1.8rem;
-            color: $color_white;
-        }
     }
 
     .Paris {
@@ -394,28 +390,6 @@ nav {
         background-size: cover;
         background-position: center;
         padding: 15.47vw 1.86vw 3.65vw 1.04vw;
-
-        div {
-            display: flex;
-
-            h4 {
-                color: $color_white;
-                padding-bottom: 1.04vw;
-            }
-
-            ::after {
-                content: "";
-                display: block;
-                width: 100%;
-                height: 5px;
-                background-color: $color_yellow;
-            }
-        }
-
-        p {
-            font-size: 1.8rem;
-            color: $color_white;
-        }
     }
 
     .New_York {
@@ -424,28 +398,27 @@ nav {
         background-size: cover;
         background-position: center;
         padding: 15.47vw 1.86vw 3.65vw 1.04vw;
+    }
 
-        div {
-            display: flex;
+    .city_name_container {
+        display: flex;
+    }
 
-            h4 {
-                color: $color_white;
-                padding-bottom: 1.04vw;
-            }
+    h4 {
+        color: $color_white;
+        border-bottom: 5px $color_yellow;
+        background:
+            linear-gradient($color_yellow 0 0) bottom/100% var(--_d, 0) no-repeat;
+        overflow: hidden;
+        transition: 0.3s;
+        border-radius: 2px;
+        border-bottom: 5px solid $color_yellow;
+    }
 
-            ::after {
-                content: "";
-                display: block;
-                width: 100%;
-                height: 5px;
-                background-color: $color_yellow;
-            }
-        }
-
-        p {
-            font-size: 1.8rem;
-            color: $color_white;
-        }
+    p {
+        padding-top: 1.04vw;
+        font-size: 1.8rem;
+        color: $color_white;
     }
 }
 
@@ -467,15 +440,273 @@ nav {
                 linear-gradient($color_yellow 0 0) bottom/100% var(--_d, 0) no-repeat;
             overflow: hidden;
             transition: 0.3s;
-            border-radius: 5px;
-        }
-
-        ::after {
-            content: "";
-            display: block;
-            width: 100%;
-            height: 5px;
-            background-color: $color_yellow;
+            border-radius: 2px;
+            border-bottom: 5px solid $color_yellow;
         }
     }
+}
+
+.derigable_container {
+    background-image: url(../IMG/bg_mountains.png);
+    background-size: cover;
+    background-attachment: fixed;
+    padding-top: 6.25vw;
+    padding-bottom: 15.26vw;
+
+    h3 {
+
+        padding-bottom: 3.15vw;
+        font-size: 4rem;
+        font-weight: 700;
+    }
+}
+
+.derigable_img {
+    width: 100%;
+    padding-left: 5.21vw;
+    padding-right: 8.85vw;
+    animation: float 5s ease-in-out infinite;
+
+    img {
+        max-width: 100%;
+    }
+}
+
+.derigable_text {
+    width: 100%;
+    padding-left: 8.33vw;
+    padding-right: 3.91vw;
+
+    h3 {
+        padding-top: 0;
+        padding-bottom: 1.85vh;
+    }
+
+    p {
+        font-size: 1.8rem;
+        font-weight: 400;
+    }
+
+    .what_we_do {
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 0.99vw;
+
+        a {
+            color: $color_black;
+            font-size: 2.4rem;
+            font-weight: 700;
+            background:
+                linear-gradient($color_yellow 0 0) bottom/100% var(--_d, 0) no-repeat;
+            overflow: hidden;
+            transition: 0.3s;
+            border-radius: 2px;
+            border-bottom: 5px solid $color_yellow;
+        }
+    }
+}
+
+.diversity_container {
+    padding-top: 6.25vw;
+    padding-bottom: 6.25vw;
+    position: relative;
+
+    h3 {
+        font-size: 4rem;
+        font-weight: 700;
+        padding-bottom: 2.6vw;
+    }
+
+    ::before {
+        content: "";
+        width: 100%;
+        height: 0px;
+        border-bottom: 5px solid $color_orange;
+        position: absolute;
+        top: 13.84vw;
+        z-index: -1;
+    }
+
+    ::after {
+        content: "";
+        width: 100%;
+        height: 0px;
+        border-bottom: 5px solid $color_orange;
+        position: absolute;
+        bottom: 11.93vw;
+        z-index: -1;
+    }
+}
+
+.image_container {
+    grid-template-columns: 10.68vw 13vw 21.6vw 9.32vw 10.73vw 14.3vw;
+    grid-template-rows: 17.08vw 3.28vw 7.14vw 0.98vw 8.02vw;
+    align-items: center;
+    justify-content: center;
+    column-gap: 1.04vw;
+    row-gap: 1.04vw;
+
+    img {
+        min-width: 100%;
+    }
+
+    .col_1_11 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+
+    .col_1_21 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 4;
+    }
+
+    .col_1_22 {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 4;
+    }
+
+    .col_1_31 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 4;
+        grid-row-end: 6;
+    }
+
+    .col_2_11 {
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 6;
+    }
+
+    .col_3_11 {
+        grid-column-start: 4;
+        grid-column-end: 7;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+
+    .col_3_21 {
+        grid-column-start: 4;
+        grid-column-end: 5;
+        grid-row-start: 3;
+        grid-row-end: 6;
+    }
+
+    .col_3_22 {
+        grid-column-start: 5;
+        grid-column-end: 6;
+        grid-row-start: 3;
+        grid-row-end: 5;
+    }
+
+    .col_3_23 {
+        grid-column-start: 5;
+        grid-column-end: 6;
+        grid-row-start: 5;
+        grid-row-end: 6;
+    }
+
+    .col_3_24 {
+        grid-column-start: 6;
+        grid-column-end: 7;
+        grid-row-start: 3;
+        grid-row-end: 6;
+    }
+}
+
+.work_with_us {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 1.82vw;
+
+    a {
+        color: $color_black;
+        font-size: 2.4rem;
+        font-weight: 700;
+        background:
+            linear-gradient($color_yellow 0 0) bottom/100% var(--_d, 0) no-repeat;
+        overflow: hidden;
+        transition: 0.3s;
+        border-radius: 2px;
+        border-bottom: 5px solid $color_yellow;
+    }
+}
+
+.achievements {
+    background-color: $color_white_green;
+    padding-top: 6.25vw;
+    padding-bottom: 6.25vw;
+
+
+    h3 {
+        padding-bottom: 4.79vw;
+        font-size: 4rem;
+        font-weight: 700;
+    }
+}
+
+.reward_container {
+    grid-template-columns: 3fr 7fr 5fr;
+    grid-template-rows: 14.01vw 1.56vw 2.6vw 18.18vw;
+    text-align: center;
+    align-items: center;
+
+    .award_1_11 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 4;
+    }
+
+    .award_1_21 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 4;
+        grid-row-end: 5;
+    }
+
+    .award_2_11 {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 5;
+    }
+
+    .award_3_11 {
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+
+    .award_3_21 {
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        grid-row-end: 5;
+    }
+}
+
+.contact {
+    background-image: url(../IMG/—Pngtree—south\ korea\ jinxian\ ink\ hills_6690513\ 2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 6.25vw;
+
+    h3 {
+        font-size: 4rem;
+        font-weight: 700;
+        padding-bottom: 6.25vw;
+    }
+}
+
+.contact_container{
+    grid-template-columns: 3fr repeat(3, 4fr);
 }
