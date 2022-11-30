@@ -137,6 +137,10 @@ header {
     }
 }
 
+.mobile_menu{
+    display: none;
+}
+
 nav {
     width: 100%;
 
@@ -175,14 +179,14 @@ nav {
     width: 50%;
     font-size: 8rem;
     font-weight: 400;
-    padding: 27.96vh 9.48vw 0 10.89vw;
+    padding: 27.96vh 9.48vw 0 0;
     text-align: right;
     color: $color_white;
 }
 
 .main_text {
     width: 50%;
-    margin-top: 29.54vh;
+    margin-top: 27.59vh;
     margin-right: 8.39vw;
 
     p {
@@ -210,14 +214,12 @@ nav {
         width: 100%;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: 8.7vw 12.14vw 0.7vw 8.3vw 16.5vw;
-        column-gap: 62px;
+        column-gap: 3.23vw;
     }
 
 
     img {
         max-width: 100%;
-        align-self: center;
-        min-height: 100%;
         transition: transform 0.5s;
     }
 
@@ -449,7 +451,7 @@ nav {
 .derigable_container {
     background-image: url(../IMG/bg_mountains.png);
     background-size: cover;
-    background-attachment: fixed;
+    background-position: center;
     padding-top: 6.25vw;
     padding-bottom: 15.26vw;
 
@@ -516,26 +518,26 @@ nav {
         font-weight: 700;
         padding-bottom: 2.6vw;
     }
+}
 
-    ::before {
-        content: "";
-        width: 100%;
-        height: 0px;
-        border-bottom: 5px solid $color_orange;
-        position: absolute;
-        top: 13.84vw;
-        z-index: -1;
-    }
+.diversity_container::before {
+    content: "";
+    width: 100%;
+    height: 0px;
+    border-bottom: 5px solid $color_orange;
+    position: absolute;
+    top: 13.84vw;
+    z-index: -1;
+}
 
-    ::after {
-        content: "";
-        width: 100%;
-        height: 0px;
-        border-bottom: 5px solid $color_orange;
-        position: absolute;
-        bottom: 11.93vw;
-        z-index: -1;
-    }
+.diversity_container::after {
+    content: "";
+    width: 100%;
+    height: 0px;
+    border-bottom: 5px solid $color_orange;
+    position: absolute;
+    bottom: 11.93vw;
+    z-index: -1;
 }
 
 .image_container {
@@ -547,7 +549,7 @@ nav {
     row-gap: 1.04vw;
 
     img {
-        min-width: 100%;
+        max-width: 100%;
     }
 
     .col_1_11 {
@@ -658,6 +660,10 @@ nav {
     text-align: center;
     align-items: center;
 
+    img {
+        max-width: 100%;
+    }
+
     .award_1_11 {
         grid-column-start: 1;
         grid-column-end: 2;
@@ -689,7 +695,7 @@ nav {
     .award_3_21 {
         grid-column-start: 3;
         grid-column-end: 4;
-        grid-row-start: 2;
+        grid-row-start: 3;
         grid-row-end: 5;
     }
 }
@@ -699,6 +705,7 @@ nav {
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: 6.25vw;
+    background-position: center;
 
     h3 {
         font-size: 4rem;
@@ -707,6 +714,472 @@ nav {
     }
 }
 
-.contact_container{
-    grid-template-columns: 3fr repeat(3, 4fr);
+.contact_container {
+    width: 100%;
+    grid-template-areas:
+        "contact_us London Dubai Paris"
+        "contact_us NY contact_form contact_form";
+    row-gap: 3.23vw;
+    column-gap: 3.5vw;
+    align-items: baseline;
+    padding-bottom: 1.98vw;
+
+    h4 {
+        text-transform: uppercase;
+        font-size: 3rem;
+        font-weight: 700;
+        padding-bottom: 6.5rem;
+    }
+
+    p {
+        font-size: 3rem;
+        font-weight: 400;
+        line-height: 190%;
+    }
+}
+
+.header_section p {
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.header_section {
+    grid-area: contact_us;
+    min-width: fit-content;
+    white-space: nowrap;
+}
+
+.london_office {
+    grid-area: London;
+
+}
+
+.dubai_office {
+    grid-area: Dubai;
+}
+
+.NY_office {
+    grid-area: NY;
+}
+
+.paris_office {
+    grid-area: Paris;
+}
+
+.mail_to_us {
+    grid-area: contact_form;
+    flex-direction: column;
+    justify-content: space-between;
+
+    div {
+        border-bottom: 1px solid $color_black;
+        margin-bottom: 1.7rem;
+        padding-bottom: 1rem;
+        display: flex;
+        align-items: center;
+
+        label {
+            font-size: 3rem;
+            font-weight: 400;
+        }
+
+        input {
+            border: none;
+            font-size: 3rem;
+            width: 100%;
+            background: transparent;
+        }
+    }
+}
+
+.button {
+    text-align: right;
+    padding-bottom: 4.69vw;
+
+    .send_button {
+        background-color: $color_orange;
+        color: $color_black;
+        border-radius: 5px;
+        border: none;
+        font-size: 4rem;
+        font-weight: 700;
+        line-height: 120%;
+        padding: 1.2rem 6.7rem 1.8rem 6.7rem;
+    }
+}
+
+.footer {
+    border-top: 1px solid $color_black;
+    padding-top: 2.1vw;
+    padding-bottom: 2.1vw;
+    font-size: 1.8rem;
+    font-weight: 700;
+    width: 100%;
+
+    .copyright {
+        padding-right: 2rem;
+        white-space: nowrap;
+    }
+
+    .privacy_policy {
+        padding-left: 2rem;
+        border-left: 1px solid $color_black;
+        white-space: nowrap;
+
+        a {
+            color: $color_black;
+        }
+    }
+
+    .designer {
+        justify-self: flex-end;
+        width: 100%;
+        white-space: nowrap;
+        text-align: right;
+    }
+}
+
+@media (max-width: 1760px) {
+    .contact_container {
+        grid-template-areas:
+            "contact_us London Dubai"
+            "contact_us Paris NY"
+            "contact_us contact_form contact_form";
+    }
+}
+
+@media (max-width: 1600px) {
+    .main_header {
+        font-size: 6rem;
+    }
+
+    .our_story_page {
+
+        .text_2_1,
+        .text_col_1_2,
+        .text_col_3_2 {
+
+            p {
+                padding: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 1250px) {
+    .main_header {
+        font-size: 4.2rem;
+    }
+
+    .main_text {
+        margin-right: 0;
+
+        p {
+            font-size: 2.5rem;
+        }
+    }
+
+    .our_story_page {
+        .grid_container {
+            grid-template-columns: 9fr 10fr 9fr;
+            grid-template-rows: 12vw 12vw 0.7vw 12vw 17vw;
+        }
+    }
+
+    .derigable_img {
+        padding-right: 1vw;
+        padding-top: 5vw;
+    }
+
+    .contact_container {
+
+        .london_office,
+        .NY_office,
+        .dubai_office,
+        .paris_office {
+            h4 {
+                font-size: 3rem;
+                padding-bottom: 3rem;
+            }
+
+            p {
+                font-size: 2rem;
+                line-height: 150%;
+            }
+        }
+
+        .mail_to_us {
+            h4 {
+                padding-bottom: 3rem;
+            }
+
+            div {
+                margin-bottom: 0.5rem;
+                padding-bottom: 0;
+
+                label {
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+
+    .button {
+        .send_button {
+            font-size: 3rem;
+        }
+    }
+}
+
+@media(max-width: 1030px) {
+    h4 {
+        font-size: 2rem;
+    }
+
+    header {
+        flex-wrap: wrap;
+
+        .logo {
+            align-self: stretch;
+        }
+
+        nav {
+            order: 2;
+            padding-top: 1rem;
+            width: 100%;
+
+        }
+    }
+
+    .our_story_page,
+    .our_collection,
+    .derigable_container,
+    .diversity_container,
+    .achievements,
+    .contact {
+        h3 {
+            font-size: 3rem;
+        }
+    }
+
+    .contact_container {
+
+        p {
+            font-size: 2.5rem;
+        }
+
+        .london_office,
+        .NY_office,
+        .dubai_office,
+        .paris_office {
+            h4 {
+                font-size: 2.5rem;
+                padding-bottom: 2.5rem;
+            }
+
+            p {
+                font-size: 1.6rem;
+                line-height: 120%;
+            }
+        }
+
+        .mail_to_us {
+            h4 {
+                padding-bottom: 2.5rem;
+                font-size: 2.5rem;
+            }
+
+            div {
+                label {
+                    font-size: 1.6rem;
+                }
+            }
+        }
+    }
+
+    .button {
+        .send_button {
+            font-size: 2.5rem;
+            padding: 1rem 3rem 1rem 3rem;
+        }
+    }
+
+    .footer {
+        flex-wrap: wrap;
+
+        .copyright {
+            order: 1;
+            width: 100%;
+            text-align: center;
+            padding-right: 0;
+        }
+
+        .privacy_policy,
+        .designer {
+            width: 50%;
+            padding-bottom: 1rem;
+            border: none;
+        }
+    }
+
+}
+
+@media (max-width: 900px) {
+    .our_story_page {
+
+        .text_2_1,
+        .text_col_1_2,
+        .text_col_3_2 {
+
+            p {
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    .our_collection,
+    .derigable_text {
+        p {
+            font-size: 1.2rem;
+        }
+    }
+
+    .our_collection::before,
+    .diversity_container::before {
+        top: 17vw;
+    }
+
+    .our_collection::after,
+    .diversity_container::after {
+        bottom: 15vw;
+    }
+
+    .contact_container {
+
+        p {
+            font-size: 2.5rem;
+        }
+
+        .london_office,
+        .NY_office,
+        .dubai_office,
+        .paris_office {
+            h4 {
+                font-size: 1.8rem;
+                padding-bottom: 1.8rem;
+            }
+
+            p {
+                font-size: 1.5rem;
+            }
+        }
+
+        .mail_to_us {
+            h4 {
+                padding-bottom: 1.8rem;
+                font-size: 1.8rem;
+            }
+
+            div {
+                label {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 670px) {
+    .mobile_menu{
+        align-self: center;
+        display: block;
+        color:$color_black;
+        font-size: 2rem;
+        padding: 1rem;
+
+        
+    }
+
+nav{display: none;}
+
+    h4 {
+        font-size: 1.5rem;
+    }
+
+    .start_page_content {
+        flex-direction: column;
+
+        .main_header {
+            width: 70%;
+            padding-top: 10vh;
+            text-align: left;
+        }
+
+        .main_text {
+            width: 100%;
+            padding-left: 15vw;
+            margin-top: 10vh;
+        }
+    }
+
+    .contact_container {
+        p {
+            font-size: 1.5rem;
+        }
+
+        .london_office,
+        .NY_office,
+        .dubai_office,
+        .paris_office {
+            h4 {
+                font-size: 1.4rem;
+                padding-bottom: 1.4rem;
+            }
+
+            p {
+                font-size: 1.2rem;
+            }
+        }
+
+        .our_story_page {
+
+            .text_2_1,
+            .text_col_1_2,
+            .text_col_3_2 {
+                p {
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        .mail_to_us {
+            h4 {
+                padding-bottom: 1.5rem;
+                font-size: 1.5rem;
+            }
+
+            div {
+                label {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+
+    .button {
+        .send_button {
+            font-size: 2rem;
+        }
+    }
+
+    .our_story_page,
+    .our_collection,
+    .derigable_container,
+    .diversity_container,
+    .achievements,
+    .contact {
+        h3 {
+            font-size: 2rem;
+        }
+    }
 }
