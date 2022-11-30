@@ -137,7 +137,7 @@ header {
     }
 }
 
-.mobile_menu{
+.mobile_menu {
     display: none;
 }
 
@@ -806,6 +806,12 @@ nav {
         line-height: 120%;
         padding: 1.2rem 6.7rem 1.8rem 6.7rem;
     }
+
+    :hover {
+        background-color: $color_black;
+        color: $color_orange;
+        box-shadow: 0px 0px 10px $color_orange;
+    }
 }
 
 .footer {
@@ -947,7 +953,6 @@ nav {
             order: 2;
             padding-top: 1rem;
             width: 100%;
-
         }
     }
 
@@ -960,6 +965,13 @@ nav {
         h3 {
             font-size: 3rem;
         }
+    }
+
+    .our_story_page .read_more .read_more_content a,
+    .view_more .view_more_content a,
+    .derigable_text .what_we_do_content a,
+    .work_with_us_content a {
+        font-size: 2rem;
     }
 
     .contact_container {
@@ -1090,17 +1102,25 @@ nav {
 }
 
 @media (max-width: 670px) {
-    .mobile_menu{
-        align-self: center;
+    .mobile_menu {
         display: block;
-        color:$color_black;
-        font-size: 2rem;
-        padding: 1rem;
 
-        
+        a {
+            color: $color_orange;
+            font-size: 2.4rem;
+            font-weight: 700;
+            background:
+                linear-gradient($color_orange 0 0) bottom/100% var(--_d, 0) no-repeat;
+            overflow: hidden;
+            transition: 0.3s;
+            border-radius: 2px;
+            align-self: baseline;
+        }
     }
 
-nav{display: none;}
+    nav {
+        display: none;
+    }
 
     h4 {
         font-size: 1.5rem;
@@ -1181,5 +1201,88 @@ nav{display: none;}
         h3 {
             font-size: 2rem;
         }
+    }
+}
+
+@media (max-width: 590px) {
+
+    .our_story_page .text_2_1 p,
+    .our_story_page .text_col_1_2 p,
+    .our_story_page .text_col_3_2 p {
+        font-size: 1rem;
+    }
+
+    .our_collection p,
+    .derigable_text p {
+        font-size: 1rem;
+    }
+
+    .derigable_img {
+        padding-top: 7.5vw;
+    }
+
+    .footer {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 490px) {
+    .main_header {
+        font-size: 3rem;
+    }
+
+    .main_text p {
+        font-size: 2rem;
+    }
+
+    .mobile_menu a,
+    .take_a_tour {
+        font-size: 2rem;
+    }
+
+    .our_story_page .text_2_1 p,
+    .our_story_page .text_col_1_2 p,
+    .our_story_page .text_col_3_2 p {
+        font-size: 0.8rem;
+        line-height: 100%;
+    }
+
+    h4 {
+        font-size: 1rem;
+    }
+
+    .our_collection p,
+    .derigable_text p {
+        font-size: 0.8rem
+    }
+
+    .our_story_page .read_more .read_more_content a,
+    .view_more .view_more_content a,
+    .derigable_text .what_we_do_content a,
+    .work_with_us_content a {
+        font-size: 1.5rem;
+    }
+
+    .our_story_page h3,
+    .our_collection h3,
+    .derigable_container h3,
+    .diversity_container h3,
+    .achievements h3,
+    .contact h3,
+    .button .send_button {
+        font-size: 1.5rem;
+    }
+
+    .contact_container .london_office h4,
+    .contact_container .NY_office h4,
+    .contact_container .dubai_office h4,
+    .contact_container .paris_office h4,
+    .contact_container .mail_to_us h4,
+    .contact_container .london_office p,
+    .contact_container .NY_office p,
+    .contact_container .dubai_office p,
+    .contact_container .paris_office p,
+    .contact_container .mail_to_us div label {
+        font-size: 1rem;
     }
 }
